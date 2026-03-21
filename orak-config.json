@@ -1,0 +1,35 @@
+{
+  "copyDepsLibFolder": "orak_modules",
+  "copyDepsModulesToCopy": [
+    {
+      "name": "bootstrap",
+      "file": "dist/css/bootstrap.min.css"
+    },
+    {
+      "name": "bootstrap",
+      "file": "dist/js/bootstrap.min.js"
+    },
+    {
+      "name": "bootstrap",
+      "file": "dist/js/bootstrap.bundle.min.js"
+    },
+    {
+      "name": "bootstrap-icons",
+      "file": "font/bootstrap-icons.min.css"
+    },
+    {
+      "name": "bootstrap-icons",
+      "file": "font/fonts/bootstrap-icons.woff"
+    },
+    {
+      "name": "bootstrap-icons",
+      "file": "font/fonts/bootstrap-icons.woff2"
+    },
+    {
+      "name": "oraksoft-tw-css-lib",
+      "file": "dist/oraksoft-tw-lib.css"
+    }
+  ],
+  "copyDepsLibFolderEmpty": true,
+  "copyDepsLibFolderEmpty_comment": "Lib folder sync öncesi siler"
+}
