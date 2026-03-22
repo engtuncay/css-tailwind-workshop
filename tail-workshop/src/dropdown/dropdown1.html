@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+  <div class="p-8 space-y-10">
+    <h2 class="text-xl font-bold mb-4">Tailwind Dropdown Örnekleri</h2>
+    <!-- 1. Hover ile Açılan Dropdown -->
+    <div>
+      <span class="block text-sm text-gray-500 mb-1">Hover ile Açılan Dropdown</span>
+      <div class="relative inline-block group">
+        <button class="bg-blue-600 text-white px-4 py-2 rounded">Menü</button>
+        <div
+          class="absolute left-0 mt-2 w-40 bg-white border rounded shadow-lg opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-opacity duration-200 z-10">
+          <a href="#" class="block px-4 py-2 hover:bg-gray-100">Seçenek 1</a>
+          <a href="#" class="block px-4 py-2 hover:bg-gray-100">Seçenek 2</a>
+          <a href="#" class="block px-4 py-2 hover:bg-gray-100">Seçenek 3</a>
+        </div>
+      </div>
+    </div>
+    <!-- 2. Tıklama ile Açılan Dropdown (Checkbox Hack) -->
+    <div class="mt-8">
+      <span class="block text-sm text-gray-500 mb-1">Tıklama ile Açılan Dropdown (Checkbox Hack)</span>
+      <div class="relative inline-block">
+        <input type="checkbox" id="dropdown-toggle2" class="peer hidden">
+        <label for="dropdown-toggle2"
+          class="bg-green-600 text-white px-4 py-2 rounded cursor-pointer select-none">Menü</label>
+        <div
+          class="absolute left-0 mt-2 w-40 bg-white border rounded shadow-lg z-10 opacity-0 peer-checked:opacity-100 pointer-events-none peer-checked:pointer-events-auto transition-opacity duration-200">
+          <a href="#" class="block px-4 py-2 hover:bg-gray-100">Seçenek 1</a>
+          <a href="#" class="block px-4 py-2 hover:bg-gray-100">Seçenek 2</a>
+          <a href="#" class="block px-4 py-2 hover:bg-gray-100">Seçenek 3</a>
+        </div>
+      </div>
+    </div>
+    <!-- 3. Saf HTML/CSS ile Checkbox Hack Dropdown -->
+    <div class="mt-8">
+      <span class="block text-sm text-gray-500 mb-1">Checkbox Hack ile Dropdown (Sadece HTML/CSS)</span>
+      <div class="relative inline-block">
+        <input type="checkbox" id="dropdown-toggle" class="peer hidden">
+        <label for="dropdown-toggle"
+          class="bg-purple-600 text-white px-4 py-2 rounded cursor-pointer select-none">Menü</label>
+        <div
+          class="absolute left-0 mt-2 w-40 bg-white border rounded shadow-lg z-10 opacity-0 peer-checked:opacity-100 pointer-events-none peer-checked:pointer-events-auto transition-opacity duration-200">
+          <a href="#" class="block px-4 py-2 hover:bg-gray-100">Seçenek 1</a>
+          <a href="#" class="block px-4 py-2 hover:bg-gray-100">Seçenek 2</a>
+          <a href="#" class="block px-4 py-2 hover:bg-gray-100">Seçenek 3</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. HTML5 <details> ve <summary> ile Dropdown -->
+  <div class="mt-8">
+    <span class="block text-sm text-gray-500 mb-1">HTML5 <code>&lt;details&gt;</code> ve <code>&lt;summary&gt;</code>
+      ile Dropdown</span>
+    <details id="details-dropdown" class="w-40 bg-white border rounded shadow-lg">
+      <summary class="bg-pink-600 text-white px-4 py-2 rounded cursor-pointer select-none outline-none">Menü</summary>
+      <div class="flex flex-col">
+        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Seçenek 1</a>
+        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Seçenek 2</a>
+        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Seçenek 3</a>
+      </div>
+    </details>
+  </div>
+</body>
+
+<script>
+// <details> dropdown dışına tıklanınca kapanması için
+document.addEventListener('click', function(event) {
+  const details = document.getElementById('details-dropdown');
+  if (!details) return;
+  if (!details.open) return;
+  // details içindeyse bir şey yapma
+  if (details.contains(event.target)) return;
+  details.open = false;
+});
+</script>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../orak_modules/oraksoft-ui/oraksoft-ui.js" type="module"></script>
+</head>
+
+<body class="m-2">
+  <!-- 4. HTML5 <details> ve <summary> ile Dropdown -->
+  <div class="">
+    <span class="block text-sm text-gray-500 mb-1">HTML5 <code>&lt;details&gt;</code> ve <code>&lt;summary&gt;</code>
+      ile Dropdown</span>
+    <details id="details-dropdown" fi-input-type="dropdown-auto" class="w-40 bg-white border rounded shadow-lg">
+      <summary class="bg-pink-600 text-white px-4 py-2 rounded cursor-pointer select-none outline-none">Menü</summary>
+      <div class="flex flex-col">
+        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Seçenek 1</a>
+        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Seçenek 2</a>
+        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Seçenek 3</a>
+      </div>
+    </details>
+  </div>
+  <br />
+
+  <div class="mt-8">
+    <details id="details-dropdown2" fi-input-type="dropdown-auto" class=" bg-white border rounded shadow-lg w-48">
+      <summary class=" bg-pink-600 text-white px-4 py-2 rounded cursor-pointer select-none outline-none list-none">Menü 2
+      </summary>
+      <div class="flex flex-col">
+        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Seçenek 1</a>
+        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Seçenek 2</a>
+        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Seçenek 3</a>
+      </div>
+    </details>
+  </div>
+
+    <div class="mt-8">
+    <details id="details-dropdown2" fi-input-type="dropdown-auto" class=" bg-white border rounded shadow-lg w-48 relative">
+      <summary class=" bg-pink-600 text-white px-4 py-2 rounded cursor-pointer select-none outline-none list-none">Menü 3
+      </summary>
+      <div class="flex flex-col absolute bg-white">
+        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Seçenek 1 aaaaaaa</a>
+        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Seçenek 2</a>
+        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Seçenek 3</a>
+      </div>
+    </details>
+  </div>
+
+  <div class="mb-96">....</div>
+  <div class="mb-96">....</div>
+
+</body>
+
+<script type="module">
+  
+  import {FiDocExt} from "../orak_modules/oraksoft-ui/oraksoft-ui.js";
+
+  FiDocExt.addClickDropdownAutoClose(document);
+  
+  
+  
+
+  
+
+  //FiDocExt.
+
+  // fi-input-type="dropdown-auto" olan tüm <details> dropdown'ları dışarı tıklanınca kapanır
+  // document.addEventListener('click', function (event) {
+  //   document.querySelectorAll('details[fi-input-type="dropdown-auto"]').forEach(function (details) {
+  //     if (!details.open) return;
+  //     if (details.contains(event.target)) return;
+  //     details.open = false;
+  //   });
+  // });
+</script>
+
+</html>

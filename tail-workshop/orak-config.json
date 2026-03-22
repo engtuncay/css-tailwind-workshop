@@ -1,5 +1,5 @@
 {
-  "copyDepsLibFolder": "orak_modules",
+  "copyDepsLibFolder": "src/orak_modules",
   "copyDepsModulesToCopy": [
     {
       "name": "bootstrap-icons",

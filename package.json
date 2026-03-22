@@ -10,8 +10,7 @@
   "dependencies": {
     "bootstrap-icons": "^1.9.1",
     "notiflix": "^3.2.8",
-    "oraksoft-ui": "file:../oraksoft-ui",
-    "oraksoft-tw-css-lib": "file:../oraksoft-tw-css-lib"
+    "oraksoft-ui": "file:../oraksoft-ui"
   },
   "devDependencies": {
     "archiver": "^7.0.1",
