@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="../output.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 p-4">
+    <div class="container mx-auto px-4">
+        <!-- Carousel 1: Slides Only -->
+        <div class="relative w-full overflow-hidden rounded-lg">
+            <div class="relative w-full" id="carousel1">
+                <div class="hidden absolute inset-0 active:block">
+                    <img src="img/resim1.jpg" class="w-full h-96 object-cover" alt="Slide 1">
+                </div>
+                <div class="hidden absolute inset-0">
+                    <img src="img/resim2.jpg" class="w-full h-96 object-cover" alt="Slide 2">
+                </div>
+                <div class="hidden absolute inset-0">
+                    <img src="img/resim3.jpg" class="w-full h-96 object-cover" alt="Slide 3">
+                </div>
+            </div>
+            <script>
+                function autoSlide(carouselId) {
+                    let currentIndex = 0;
+                    const carousel = document.getElementById(carouselId);
+                    const slides = carousel.querySelectorAll('div');
+                    
+                    setInterval(() => {
+                        slides.forEach(slide => slide.classList.remove('hidden', 'active:block'));
+                        slides[currentIndex].classList.remove('hidden');
+                        slides[currentIndex].classList.add('active:block');
+                        currentIndex = (currentIndex + 1) % slides.length;
+                    }, 3000);
+                }
+                autoSlide('carousel1');
+            </script>
+        </div>
+        <br>
+        <br>
+        <hr>
+        <br>
+        <!-- Carousel 2: With Controls -->
+        <div class="relative w-full overflow-hidden rounded-lg">
+            <div class="relative w-full" id="carousel2">
+                <div class="hidden absolute inset-0 active:block">
+                    <img src="img/resim1.jpg" class="w-full h-96 object-cover" alt="Slide 1">
+                </div>
+                <div class="hidden absolute inset-0">
+                    <img src="img/resim2.jpg" class="w-full h-96 object-cover" alt="Slide 2">
+                </div>
+                <div class="hidden absolute inset-0">
+                    <img src="img/resim3.jpg" class="w-full h-96 object-cover" alt="Slide 3">
+                </div>
+            </div>
+            <button class="absolute left-0 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/75 text-white px-4 py-2 rounded-r" onclick="prevSlide('carousel2')">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+            </button>
+            <button class="absolute right-0 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/75 text-white px-4 py-2 rounded-l" onclick="nextSlide('carousel2')">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+            </button>
+            <script>
+                let carousel2Index = 0;
+                function prevSlide(carouselId) {
+                    const carousel = document.getElementById(carouselId);
+                    const slides = carousel.querySelectorAll('div');
+                    slides.forEach(slide => slide.classList.add('hidden'));
+                    carousel2Index = (carousel2Index - 1 + slides.length) % slides.length;
+                    slides[carousel2Index].classList.remove('hidden');
+                    slides[carousel2Index].classList.add('active:block');
+                }
+                function nextSlide(carouselId) {
+                    const carousel = document.getElementById(carouselId);
+                    const slides = carousel.querySelectorAll('div');
+                    slides.forEach(slide => slide.classList.add('hidden'));
+                    carousel2Index = (carousel2Index + 1) % slides.length;
+                    slides[carousel2Index].classList.remove('hidden');
+                    slides[carousel2Index].classList.add('active:block');
+                }
+            </script>
+        </div>
+
+        <br>
+        <br>
+        <hr>
+        <br>
+
+        <!-- Carousel 3: With Indicators and Controls -->
+        <div class="relative w-full overflow-hidden rounded-lg">
+            <div class="absolute bottom-4 left-0 right-0 flex justify-center gap-2 z-10">
+                <button onclick="goToSlide('carousel3', 0)" class="w-3 h-3 bg-white rounded-full hover:bg-gray-300 carousel3-indicator active" aria-label="Slide 1"></button>
+                <button onclick="goToSlide('carousel3', 1)" class="w-3 h-3 bg-white rounded-full hover:bg-gray-300 carousel3-indicator" aria-label="Slide 2"></button>
+                <button onclick="goToSlide('carousel3', 2)" class="w-3 h-3 bg-white rounded-full hover:bg-gray-300 carousel3-indicator" aria-label="Slide 3"></button>
+            </div>
+            <div class="relative w-full" id="carousel3">
+                <div class="hidden absolute inset-0 active:block">
+                    <img src="img/resim1.jpg" class="w-full h-96 object-cover" alt="Slide 1">
+                </div>
+                <div class="hidden absolute inset-0">
+                    <img src="img/resim2.jpg" class="w-full h-96 object-cover" alt="Slide 2">
+                </div>
+                <div class="hidden absolute inset-0">
+                    <img src="img/resim3.jpg" class="w-full h-96 object-cover" alt="Slide 3">
+                </div>
+            </div>
+            <button class="absolute left-0 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/75 text-white px-4 py-2 rounded-r" onclick="prevSlide('carousel3')">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+            </button>
+            <button class="absolute right-0 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/75 text-white px-4 py-2 rounded-l" onclick="nextSlide('carousel3')">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+            </button>
+            <script>
+                let carousel3Index = 0;
+                function goToSlide(carouselId, index) {
+                    const carousel = document.getElementById(carouselId);
+                    const slides = carousel.querySelectorAll('div');
+                    const indicators = document.querySelectorAll('.carousel3-indicator');
+                    slides.forEach(slide => slide.classList.add('hidden'));
+                    indicators.forEach(ind => ind.classList.remove('bg-gray-400'));
+                    slides[index].classList.remove('hidden');
+                    slides[index].classList.add('active:block');
+                    indicators[index].classList.add('bg-gray-400');
+                    carousel3Index = index;
+                }
+                function autoSlideCarousel3() {
+                    const carousel = document.getElementById('carousel3');
+                    const slides = carousel.querySelectorAll('div');
+                    setInterval(() => {
+                        carousel3Index = (carousel3Index + 1) % slides.length;
+                        goToSlide('carousel3', carousel3Index);
+                    }, 3000);
+                }
+                autoSlideCarousel3();
+            </script>
+        </div>
+
+    </div>
+</body>
+
+</html>

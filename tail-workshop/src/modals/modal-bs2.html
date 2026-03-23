@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="../output.css" rel="stylesheet">
+  <style>
+    
+    dialog {
+      border: none;
+      border-radius: 0.5rem;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      padding: 0;
+      max-width: 28rem;
+      width: 100%;
+      /* ortada açılması için */
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    dialog::backdrop {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    dialog[open] {
+      animation: slideIn 0.3s ease-out;
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+      }
+    }
+
+  </style>
+</head>
+<body class="bg-gray-50 p-4">
+  
+  <!-- Trigger Button -->
+  <button type="button" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700" onclick="document.getElementById('myDialog').showModal()">
+    Open Modal
+  </button>
+
+  <!-- HTML5 Dialog Element -->
+  <dialog id="myDialog" class="bg-white">
+    <!-- Modal Header -->
+    <div class="flex justify-between items-center px-6 py-4 border-b border-gray-200">
+      <h5 class="text-lg font-semibold text-gray-900">Modal title</h5>
+      <button type="button" class="text-gray-400 hover:text-gray-600 text-2xl font-light" aria-label="Close" onclick="document.getElementById('myDialog').close()">
+        &times;
+      </button>
+    </div>
+    
+    <!-- Modal Body -->
+    <div class="px-6 py-4">
+      <p class="text-gray-700">Modal body text goes here.</p>
+    </div>
+    
+    <!-- Modal Footer -->
+    <div class="flex justify-end gap-3 px-6 py-4 border-t border-gray-200">
+      <button type="button" class="px-4 py-2 bg-gray-600 text-white rounded hover:bg-gray-700" onclick="document.getElementById('myDialog').close()">
+        Close
+      </button>
+      <button type="button" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700" onclick="document.getElementById('myDialog').close()">
+        Save changes
+      </button>
+    </div>
+  </dialog>
+
+</body>
+</html>
