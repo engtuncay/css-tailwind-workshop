@@ -1,6 +1,6 @@
 {
   "copyDepsLibFolder": "src/orak_modules",
-  "copyDepsModulesToCopy": [
+    "copyDepsModulesToCopy": [
     {
       "name": "bootstrap-icons",
       "file": "font/bootstrap-icons.min.css"
