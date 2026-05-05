@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="../output.css" rel="stylesheet">
+  <script src="../orak_modules/notiflix/notiflix-aio-3.2.8.min.js"></script>
+</head>
+
+<body class="p-4">
+  <button id="btnSuccess" class="border border-2" >Başarılı</button>
+  <button id="btnError" class="border border-2">Hata</button>
+
+  <script>
+    document.getElementById('btnSuccess').addEventListener('click', () => {
+      Notiflix.Notify.success('Butona tıklandı, başarıyla çalıştı!');
+    });
+
+    document.getElementById('btnError').addEventListener('click', () => {
+      Notiflix.Notify.failure('Butona tıklandı, hata oluştu!');
+    });
+  </script>
+
+  <script>
+    // Notiflix.Notify.success('İşlem başarılı!');
+    // Notiflix.Notify.failure('Bir hata oluştu.');
+    // Notiflix.Notify.info('Bilgilendirme mesajı.');
+    // Notiflix.Notify.warning('Dikkat!');
+
+    // Notiflix.Report.info('Başlık', 'Bu bir bilgi raporudur.', 'Tamam');
+
+    Notiflix.Confirm.show(
+      'Emin misin?',
+      'Bu işlemi yapmak istiyor musun?',
+      'Evet',
+      'Hayır',
+      () => console.log('Evet seçildi'),
+      () => console.log('Hayır seçildi')
+    );
+
+    Notiflix.Loading.standard('Yükleniyor...');
+    setTimeout(() => Notiflix.Loading.remove(), 2000);
+
+  </script>
+
+</body>
+
+</html>
