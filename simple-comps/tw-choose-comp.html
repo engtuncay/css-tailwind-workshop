@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pen</title>
+
+    <!-- Tailwind v3 Play CDN (Forms eklentisini destekler) -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+  </head>
+  <body class="bg-gray-50 flex flex-col gap-6 items-center justify-center min-h-screen">
+    
+    <div class="max-w-md mx-auto p-6 bg-white rounded-xl shadow-md">
+      <label
+        class="block mb-2 text-sm font-medium text-gray-700"
+        for="file_input"
+      >
+        Dosya Yükle
+      </label>
+
+      <input
+        id="file_input"
+        type="file"
+        class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-800 hover:file:bg-indigo-100 cursor-pointer border border-gray-300 rounded-lg bg-gray-50 focus:outline-none"
+      />
+
+      <p class="mt-1 text-xs text-gray-500" id="file_input_help">
+        PNG, JPG, PDF veya WEBP (Maks. 10MB).
+      </p>
+    </div>
+
+    <div>
+            <input
+        id="file_input"
+        type="file"
+        class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-800 hover:file:bg-indigo-100 cursor-pointer border border-gray-300 rounded-lg bg-gray-50 focus:outline-none"
+      />
+    </div>
+
+    
+  </body>
+</html>
