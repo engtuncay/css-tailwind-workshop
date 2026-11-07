@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pen</title>
+
+  <!-- Tailwind v3 Play CDN (Forms eklentisini destekler) -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+</head>
+
+<body class="m-1">
+  <h3 class="bg-red-100 text-center">Tailwind InputBox (TextBox) Examples</h3>
+  <br>
+  <!-- inputbox 1 (simple)  -->
+
+  <h3>Standard InputBox</h3>
+
+  <div class="">
+    <input type="text" placeholder="Kullanıcı adı"
+      class="p-2 w-full border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+  </div>
+
+  <br /><br />
+
+  <!-- inputbox2  -->
+
+  <div
+    class="flex items-center w-full border border-gray-300 rounded-lg shadow-sm focus-within:ring-2 focus-within:ring-blue-500 overflow-hidden bg-white">
+    <!-- Input Alanı (span statik) -->
+    <input type="text" placeholder="Kullanıcı adı"
+      class="pl-4 py-2 w-full focus:outline-none border-none shadow-none" />
+    <!-- Static Span Etiketi -->
+    <span class="static px-2 text-gray-500 text-sm select-none bg-transparent">
+      @site.com
+    </span>
+  </div>
+
+  <br /><br />
+
+  <!-- inputbox3 (span absolute) -->
+  <div class="relative">
+    <input type="text" placeholder="Kullanıcı adı"
+      class="pr-24 pl-4 py-2 w-full border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+    <!--pos:absolute-->
+    <span class="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-500 text-sm">
+      @site.com
+    </span>
+  </div>
+
+  <br><br>
+
+  <!-- inputbox 4 (floating label için relative olmalı) -->
+
+  <div class="relative w-full">
+    <input type="text" id="floating_input" placeholder=" "
+      class="peer w-full border border-2 border-gray-300 rounded-lg px-4 pt-6 pb-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+    <label for="floating_input"
+      class="absolute text-gray-500 text-sm left-4 top-2 transition-all duration-200 peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:top-2 peer-focus:text-sm peer-focus:text-blue-500">
+      Adınız
+    </label>
+  </div>
+
+  <br><br>
+
+  <div class="grid grid-cols-[1fr_2fr] gap-4 p-2">
+    <!--row1 -->
+    <label for="floating_input" class="text-gray-500 text-sm inline-block">
+      Adı
+    </label>
+    <input type="text" id="floating_input" placeholder=" "
+      class="border border-2 border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      <!--row2  -->
+      <label for="floating_input" class="text-gray-500 text-sm inline-block">
+      Satır2
+    </label>
+    <input type="text" id="floating_input" placeholder=" "
+      class="border border-2 border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+
+  </div>
+
+
+
+
+
+
+</body>
+
+</html>

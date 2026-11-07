@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Tailwind Dropdown - Native Popover</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        #dropdownButton {
+            anchor-name: --dropdown-button;
+        }
+
+        #dropdownMenu {
+            position: fixed;
+            position-anchor: --dropdown-button;
+            inset: auto;
+            top: calc(anchor(bottom) + 0.5rem);
+            right: anchor(right);
+            margin: 0;
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center h-screen bg-gray-100">
+
+    <!-- Dropdown Ana Kapsayıcısı -->
+    <div class="relative">
+        
+        <!-- Buton -->
+        <button id="dropdownButton" type="button" popovertarget="dropdownMenu" 
+        class="px-4 py-2 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 focus:outline-none">
+        Menü ▾
+        </button>
+
+        <!-- Dropdown Menü -->
+        <div id="dropdownMenu" popover="auto" class="w-48 bg-white rounded-lg shadow-lg py-2 border border-gray-100">
+            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Profil</a>
+            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Ayarlar</a>
+            <div class="border-t border-gray-100 my-1"></div>
+            <a href="#" class="block px-4 py-2 text-red-600 hover:bg-gray-50">Çıkış Yap</a>
+        </div>
+
+    </div>
+
+<!--  
+Menünün görünmeme nedenini düzelttim: top: 100% popover’ın kendisini değil, görünüm alanını referans aldığı için menü ekran dışında kalabiliyordu. Artık CSS Anchor Positioning ile düğmenin hemen altına hizalanıyor; dropdown davranışında JavaScript kullanılmıyor.
+
+Değişiklik dropdown2.html dosyasında. Tarayıcıda doğrulama yapamadım; Chrome çalıştırılabilir dosyası bu ortamda bulunamadı. Bu çözüm, Popover ve CSS Anchor Positioning destekleyen güncel tarayıcıları gerektirir.    
+
+-->
+
+</body>
+</html>
